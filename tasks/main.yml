@@ -1,0 +1,9 @@
+---
+- include:          ../../database/tasks/main.yml
+  vars:
+    mysql_database: "{{ project_user }}"
+
+- include:          ../../user/tasks/main.yml
+  vars:
+    mysql_user:     "{{ project_user }}"
+    mysql_priv:     "{{ project_user }}.*:ALL"
